@@ -1,4 +1,4 @@
-package com.my;
+package com.aqingsao;
 
 import org.junit.Test;
 
@@ -24,7 +24,7 @@ public class SticksTest {
     @Test
     public void test_return_sqrt_10_when_given_height_3_3() {
         fist = new Sticks();
-        double expected = Math.sqrt(3 * 3 + 1);
+        double expected = Math.sqrt((3-1) * (3-1) + 1);
 
         double v = fist.maxLength(new int[]{3, 3});
         assertThat(v, is(expected));
@@ -33,9 +33,18 @@ public class SticksTest {
     @Test
     public void test_return_max_length_when_given_3_3_10_3() {
         Sticks fist = new Sticks();
-        double expected = Math.sqrt(3 * 3 + 1) + Math.sqrt(10 * 10 + 1) + Math.sqrt(10 * 10 + 1);
+        double expected = Math.sqrt((3-1) * (3-1) + 1) + Math.sqrt((10-1) * (10-1) + 1) + Math.sqrt((10-1) * (10-1) + 1);
 
         double v = fist.maxLength(new int[]{3, 3, 10, 3});
+        assertThat(v, is(expected));
+    }
+
+    @Test
+    public void test_return_max_length_when_given_6_8_2_7() {
+        Sticks fist = new Sticks();
+        double expected = Math.sqrt((8-1) * (8-1) + 1) + Math.sqrt((8-1) * (8-1) + 1) + Math.sqrt((7-1) * (7-1) + 1);
+
+        double v = fist.maxLength(new int[]{6, 8, 2, 7});
         assertThat(v, is(expected));
     }
 }
